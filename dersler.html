@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dersler</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #222;
+        }
+
+        header {
+            background: #243b55;
+            color: white;
+            text-align: center;
+            padding: 35px 20px;
+        }
+
+        header h1 {
+            margin: 0 0 10px;
+        }
+
+        nav {
+            background: #141e30;
+            padding: 15px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #7dd3fc;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .container > h2 {
+            text-align: center;
+            font-size: 30px;
+            margin-bottom: 30px;
+        }
+
+        .dersler {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .ders {
+            background: white;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+
+        .ders h3 {
+            min-height: 55px;
+            font-size: 19px;
+        }
+
+        .ders a {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 11px 20px;
+            background: #243b55;
+            color: white;
+            text-decoration: none;
+            border-radius: 7px;
+        }
+
+        .ders a:hover {
+            background: #3b82f6;
+        }
+
+        footer {
+            margin-top: 50px;
+            background: #141e30;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>Bilgisayar Programcılığı</h1>
+    <p>Dersler</p>
+</header>
+
+<nav>
+    <a href="index.html">Ana Sayfa</a>
+    <a href="dersler.html">Dersler</a>
+</nav>
+
+<div class="container">
+
+    <h2>📚 Dersler</h2>
+
+    <div class="dersler">
+
+        <div class="ders">
+            <h3>Ağ Yönetimi ve Bilgi Güvenliği</h3>
+            <a href="dersler/ag-yonetimi.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Temel ve Dijital Elektronik</h3>
+            <a href="dersler/temel-dijital-elektronik.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Ofis Yazılımları</h3>
+            <a href="dersler/ofis-yazilimlari.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>İletişim</h3>
+            <a href="dersler/iletisim.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Algoritma ve Programlama Temelleri</h3>
+            <a href="dersler/algoritma-programlama.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Atatürk İlke ve İnkılap Tarihi</h3>
+            <a href="dersler/ataturk-ilke-inkilap.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Matematik</h3>
+            <a href="dersler/matematik.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>İngilizce</h3>
+            <a href="dersler/ingilizce.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Türk Dili</h3>
+            <a href="dersler/turk-dili.html">Derse Git</a>
+        </div>
+
+        <div class="ders">
+            <h3>Gönüllülük Çalışmaları</h3>
+            <a href="dersler/gonulluluk-calismalari.html">Derse Git</a>
+        </div>
+
+    </div>
+
+</div>
+
+<footer>
+    <p>©️ 2026 Bilgisayar Programcılığı</p>
+</footer>
+
+</body>
+</html>
