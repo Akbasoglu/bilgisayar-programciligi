@@ -1,180 +1,438 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dersler</title>
+<title>Dersler | Bilgisayar Programcılığı</title>
 
-    <style>
-        * {
-            box-sizing: border-box;
-        }
+<style>
 
-        body {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #222;
-        }
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        header {
-            background: #243b55;
-            color: white;
-            text-align: center;
-            padding: 35px 20px;
-        }
+body {
+    font-family: Arial, sans-serif;
+    background: #f4f7fb;
+    color: #1e293b;
+}
 
-        header h1 {
-            margin: 0 0 10px;
-        }
+/* ÜST MENÜ */
 
-        nav {
-            background: #141e30;
-            padding: 15px;
-            text-align: center;
-        }
+header {
+    background: linear-gradient(135deg, #0f172a, #1e3a8a);
+    color: white;
+    padding: 25px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 0 15px;
-            font-weight: bold;
-        }
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
 
-        nav a:hover {
-            color: #7dd3fc;
-        }
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
 
-        .container {
-            max-width: 1100px;
-            margin: 40px auto;
-            padding: 20px;
-        }
+nav a:hover {
+    color: #93c5fd;
+}
 
-        .container > h2 {
-            text-align: center;
-            font-size: 30px;
-            margin-bottom: 30px;
-        }
+/* BAŞLIK */
 
-        .dersler {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
+.page-header {
+    text-align: center;
+    padding: 65px 20px 40px;
+}
 
-        .ders {
-            background: white;
-            padding: 25px;
-            border-radius: 12px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-        }
+.page-header h1 {
+    font-size: 42px;
+    color: #1e3a8a;
+    margin-bottom: 15px;
+}
 
-        .ders h3 {
-            min-height: 55px;
-            font-size: 19px;
-        }
+.page-header p {
+    color: #64748b;
+    font-size: 17px;
+}
 
-        .ders a {
-            display: inline-block;
-            margin-top: 10px;
-            padding: 11px 20px;
-            background: #243b55;
-            color: white;
-            text-decoration: none;
-            border-radius: 7px;
-        }
+/* DERSLER */
 
-        .ders a:hover {
-            background: #3b82f6;
-        }
+.courses {
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px 25px 70px;
 
-        footer {
-            margin-top: 50px;
-            background: #141e30;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-    </style>
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+/* DERS KARTI */
+
+.course-card {
+    background: white;
+    padding: 28px;
+    border-radius: 16px;
+
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    transition: 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+}
+
+.course-number {
+    min-width: 55px;
+    height: 55px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #1e3a8a;
+    color: white;
+
+    border-radius: 12px;
+
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.course-info {
+    flex: 1;
+}
+
+.course-info h2 {
+    font-size: 19px;
+    margin-bottom: 8px;
+}
+
+.course-info p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+.course-button {
+    display: inline-block;
+
+    margin-top: 12px;
+    padding: 9px 16px;
+
+    background: #1e3a8a;
+    color: white;
+
+    text-decoration: none;
+    border-radius: 8px;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.course-button:hover {
+    background: #3b82f6;
+}
+
+/* ALT KISIM */
+
+footer {
+    background: #0f172a;
+    color: white;
+    text-align: center;
+    padding: 25px;
+}
+
+/* TELEFON */
+
+@media (max-width: 700px) {
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        text-align: center;
+    }
+
+    nav a {
+        margin: 0 8px;
+        font-size: 14px;
+    }
+
+    .page-header h1 {
+        font-size: 32px;
+    }
+
+    .courses {
+        grid-template-columns: 1fr;
+        padding: 15px 18px 50px;
+    }
+
+    .course-card {
+        padding: 22px;
+    }
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-    <h1>Bilgisayar Programcılığı</h1>
-    <p>Dersler</p>
+
+    <div class="logo">
+        💻 Bilgisayar Programcılığı
+    </div>
+
+    <nav>
+        <a href="index.html">Ana Sayfa</a>
+        <a href="dersler.html">Dersler</a>
+    </nav>
+
 </header>
 
-<nav>
-    <a href="index.html">Ana Sayfa</a>
-    <a href="dersler.html">Dersler</a>
-</nav>
 
-<div class="container">
+<section class="page-header">
 
-    <h2>📚 Dersler</h2>
+    <h1>📚 Derslerimiz</h1>
 
-    <div class="dersler">
+    <p>
+        Bilgisayar Programcılığı bölümünde yer alan dersleri
+        ve ders içeriklerini inceleyebilirsiniz.
+    </p>
 
-        <div class="ders">
-            <h3>Ağ Yönetimi ve Bilgi Güvenliği</h3>
-            <a href="dersler/ag-yonetimi.html">Derse Git</a>
-        </div>
+</section>
 
-        <div class="ders">
-            <h3>Temel ve Dijital Elektronik</h3>
-            <a href="dersler/temel-dijital-elektronik.html">Derse Git</a>
-        </div>
 
-        <div class="ders">
-            <h3>Ofis Yazılımları</h3>
-            <a href="dersler/ofis-yazilimlari.html">Derse Git</a>
-        </div>
+<section class="courses">
 
-        <div class="ders">
-            <h3>İletişim</h3>
-            <a href="dersler/iletisim.html">Derse Git</a>
-        </div>
 
-        <div class="ders">
-            <h3>Algoritma ve Programlama Temelleri</h3>
-            <a href="dersler/algoritma-programlama.html">Derse Git</a>
-        </div>
+    <div class="course-card">
 
-        <div class="ders">
-            <h3>Atatürk İlke ve İnkılap Tarihi</h3>
-            <a href="dersler/ataturk-ilke-inkilap.html">Derse Git</a>
-        </div>
+        <div class="course-number">01</div>
 
-        <div class="ders">
-            <h3>Matematik</h3>
-            <a href="dersler/matematik.html">Derse Git</a>
-        </div>
+        <div class="course-info">
 
-        <div class="ders">
-            <h3>İngilizce</h3>
-            <a href="dersler/ingilizce.html">Derse Git</a>
-        </div>
+            <h2>Ağ Yönetimi ve Bilgi Güvenliği</h2>
 
-        <div class="ders">
-            <h3>Türk Dili</h3>
-            <a href="dersler/turk-dili.html">Derse Git</a>
-        </div>
+            <p>Bilgisayar ağları ve bilgi güvenliği temelleri.</p>
 
-        <div class="ders">
-            <h3>Gönüllülük Çalışmaları</h3>
-            <a href="dersler/gonulluluk-calismalari.html">Derse Git</a>
+            <a class="course-button"
+               href="dersler/ag-yonetimi.html">
+               Derse Git →
+            </a>
+
         </div>
 
     </div>
 
-</div>
+
+    <div class="course-card">
+
+        <div class="course-number">02</div>
+
+        <div class="course-info">
+
+            <h2>Temel ve Dijital Elektronik</h2>
+
+            <p>Elektronik ve dijital sistemlerin temel prensipleri.</p>
+
+            <a class="course-button"
+               href="dersler/temel-dijital-elektronik.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">03</div>
+
+        <div class="course-info">
+
+            <h2>Ofis Yazılımları</h2>
+
+            <p>Ofis programları ve temel bilgisayar uygulamaları.</p>
+
+            <a class="course-button"
+               href="dersler/ofis-yazilimlari.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">04</div>
+
+        <div class="course-info">
+
+            <h2>İletişim</h2>
+
+            <p>İletişim süreçleri ve etkili iletişim yöntemleri.</p>
+
+            <a class="course-button"
+               href="dersler/iletisim.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">05</div>
+
+        <div class="course-info">
+
+            <h2>Algoritma ve Programlama Temelleri</h2>
+
+            <p>Algoritma, programlama mantığı ve temel kodlama.</p>
+
+            <a class="course-button"
+               href="dersler/algoritma-programlama.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">06</div>
+
+        <div class="course-info">
+
+            <h2>Atatürk İlke ve İnkılap Tarihi</h2>
+
+            <p>Atatürk ilkeleri ve Türk inkılap tarihi.</p>
+
+            <a class="course-button"
+               href="dersler/ataturk-ilke-inkilap.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">07</div>
+
+        <div class="course-info">
+
+            <h2>Matematik</h2>
+
+            <p>Temel matematik konuları ve uygulamaları.</p>
+
+            <a class="course-button"
+               href="dersler/matematik.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">08</div>
+
+        <div class="course-info">
+
+            <h2>İngilizce</h2>
+
+            <p>Temel İngilizce bilgisi ve iletişim becerileri.</p>
+
+            <a class="course-button"
+               href="dersler/ingilizce.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">09</div>
+
+        <div class="course-info">
+
+            <h2>Türk Dili</h2>
+
+            <p>Türk dili, anlatım ve yazım kuralları.</p>
+
+            <a class="course-button"
+               href="dersler/turk-dili.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="course-card">
+
+        <div class="course-number">10</div>
+
+        <div class="course-info">
+
+            <h2>Gönüllülük Çalışmaları</h2>
+
+            <p>Toplumsal sorumluluk ve gönüllülük çalışmaları.</p>
+
+            <a class="course-button"
+               href="dersler/gonulluluk-calismalari.html">
+               Derse Git →
+            </a>
+
+        </div>
+
+    </div>
+
+
+</section>
+
 
 <footer>
-    <p>©️ 2026 Bilgisayar Programcılığı</p>
+
+    <p>
+        ©️ 2026 Balıkesir Üniversitesi - Bilgisayar Programcılığı
+    </p>
+
 </footer>
 
 </body>
